@@ -1,0 +1,31 @@
+/* styles.css — page chrome for Lantern Market.
+   The game itself is drawn on one 1280x720 canvas; this file only
+   centers that canvas and keeps the page free of scrolling. */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #0e0a16;
+  overflow: hidden;
+}
+
+.stage {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas#game {
+  display: block;
+  width: min(100vw, calc(100vh * 1280 / 720));
+  height: min(100vh, calc(100vw * 720 / 1280));
+  background: #1a1226;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+}
