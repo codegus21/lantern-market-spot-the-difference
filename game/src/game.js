@@ -13,8 +13,8 @@ export const VIEW_H = 720;
 export const PANEL_LEFT = { x: 20, y: 76 };
 export const PANEL_RIGHT = { x: 660, y: 76 };
 const HUD_H = 64;
-const HINT_BUTTON = { x: 1075, y: 12, w: 80, h: 40 };
-const MUTE_BUTTON = { x: 1165, y: 12, w: 95, h: 40 };
+const HINT_BUTTON = { x: 1095, y: 12, w: 80, h: 40 };
+const MUTE_BUTTON = { x: 1185, y: 12, w: 90, h: 40 };
 
 function inRect(x, y, r) {
   return x >= r.x && x <= r.x + r.w && y >= r.y && y <= r.y + r.h;
@@ -420,14 +420,14 @@ export class Game {
     ctx.fillStyle = '#fff';
     ctx.fillText(`${Math.ceil(this.timeLeft)}s`, barX + barW / 2, 30);
     // found counter — big and legible
-    ctx.font = '700 26px system-ui, sans-serif';
+    ctx.font = '700 24px system-ui, sans-serif';
     ctx.textAlign = 'left';
     ctx.fillStyle = '#ffd94a';
-    ctx.fillText(`Found ${this.found.size}/10`, 820, 32);
+    ctx.fillText(`Found ${this.found.size}/10`, 808, 32);
     // score
     ctx.font = '700 20px system-ui, sans-serif';
     ctx.fillStyle = '#f3e8d0';
-    ctx.fillText(`Score ${this.score}`, 960, 32);
+    ctx.fillText(`Score ${this.score}`, 968, 32);
     // hint button
     const cooling = this.now < this.hintCooldownUntil;
     ctx.fillStyle = cooling ? '#4a3a5a' : '#8a6a2a';
@@ -445,7 +445,7 @@ export class Game {
     ctx.strokeStyle = '#8a6a3a';
     ctx.strokeRect(MUTE_BUTTON.x, MUTE_BUTTON.y, MUTE_BUTTON.w, MUTE_BUTTON.h);
     ctx.fillStyle = '#f3e8d0';
-    ctx.fillText(this.muted ? 'Muted' : 'Sound', MUTE_BUTTON.x + 47, MUTE_BUTTON.y + 21);
+    ctx.fillText(this.muted ? 'Muted' : 'Sound', MUTE_BUTTON.x + 45, MUTE_BUTTON.y + 21);
   }
 
   drawBottomStrip(ctx) {
